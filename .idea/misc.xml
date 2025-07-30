@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../DeliveryService/DeliveryService/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$USER_HOME$/Downloads/DeliveryService (1)/DeliveryService/pom.xml" />
+        <option value="$USER_HOME$/Downloads/OrchestratorService/OrchestratorService/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Orchestrator-Service/Orchestrator-Service/pom.xml" />
+        <option value="$USER_HOME$/Downloads/payment_service/payment_service/pom.xml" />
+        <option value="$USER_HOME$/Downloads/payment_service (1)/payment_service/pom.xml" />
+        <option value="$PROJECT_DIR$/../payment_service/pom.xml" />
+        <option value="$USER_HOME$/Downloads/delivery_service/delivery_service/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../payment_service/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
