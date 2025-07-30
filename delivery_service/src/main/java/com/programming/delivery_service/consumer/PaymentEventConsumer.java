@@ -1,3 +1,5 @@
+package com.programming.delivery_service.consumer;
+
 import com.programming.PaymentEvent;
 import com.programming.delivery_service.service.DeliveryService;
 import lombok.RequiredArgsConstructor;

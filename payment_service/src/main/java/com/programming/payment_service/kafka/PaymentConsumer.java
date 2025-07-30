@@ -37,7 +37,7 @@ public class PaymentConsumer {
             return;
         }
 
-        // VERY IMPORTANT: commit offset even if skipped
+
         acknowledgment.acknowledge();
     }
 }

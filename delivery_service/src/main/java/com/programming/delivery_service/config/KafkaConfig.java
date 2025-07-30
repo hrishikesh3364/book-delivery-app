@@ -21,8 +21,7 @@ import java.util.Map;
 @EnableKafka
 public class KafkaConfig {
 
-    // ---------- PRODUCER FOR DELIVERY EVENTS ----------
-    @Bean
+
     public ProducerFactory<String, DeliveryEvent> deliveryProducerFactory() {
         Map<String, Object> config = Map.of(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092",
@@ -37,7 +36,6 @@ public class KafkaConfig {
         return new KafkaTemplate<>(deliveryProducerFactory());
     }
 
-    // ---------- PRODUCER FOR REFUND EVENTS ----------
     @Bean
     public ProducerFactory<String, PaymentEvent> refundProducerFactory() {
         Map<String, Object> config = Map.of(
@@ -53,7 +51,6 @@ public class KafkaConfig {
         return new KafkaTemplate<>(refundProducerFactory());
     }
 
-    // ---------- CONSUMER FOR PAYMENT EVENTS ----------
     @Bean
     public ConsumerFactory<String, PaymentEvent> paymentEventConsumerFactory() {
         Map<String, Object> props = new HashMap<>();

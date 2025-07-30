@@ -36,7 +36,6 @@ public class OrchestratorService {
             return;
         }
 
-        // Avoid re-triggering saga for cancelled or completed
         if (orderEvent.getStatus() == OrderStatus.CANCELLED
                 || orderEvent.getStatus() == OrderStatus.COMPLETED) {
             log.info("Order {} already in terminal state {}. Ignoring saga.",
@@ -47,7 +46,6 @@ public class OrchestratorService {
 
         log.info("Saga started for order {}", orderEvent.getOrderId());
 
-        // Auto simulate Payment Success/Failure
         PaymentStatus simulatedStatus = random.nextBoolean() ? PaymentStatus.SUCCESS : PaymentStatus.FAILED;
         log.info("Simulating Payment {} for order {}", simulatedStatus, orderEvent.getOrderId());
 
@@ -69,7 +67,7 @@ public class OrchestratorService {
         if (event.getPaymentStatus() == PaymentStatus.SUCCESS) {
             log.info("Payment success, triggering delivery for {}", event.getOrderId());
 
-            // Auto simulate Delivery Success/Failure
+
             DeliveryStatus simulatedDeliveryStatus = random.nextBoolean() ? DeliveryStatus.SUCCESS : DeliveryStatus.FAILED;
             log.info("Simulating Delivery {} for order {}", simulatedDeliveryStatus, event.getOrderId());
 

@@ -22,7 +22,7 @@ import java.util.Map;
 @EnableKafka
 public class KafkaConfig {
 
-    // ------------------ PRODUCER (PaymentEvent) ------------------
+
     @Bean
     public ProducerFactory<String, PaymentEvent> producerFactory() {
         Map<String, Object> config = new HashMap<>();
@@ -37,7 +37,7 @@ public class KafkaConfig {
         return new KafkaTemplate<>(producerFactory());
     }
 
-    // ------------------ CONSUMER (OrderEvent) ------------------
+
     @Bean
     public ConsumerFactory<String, OrderEvent> orderConsumerFactory() {
         JsonDeserializer<OrderEvent> deserializer = new JsonDeserializer<>(OrderEvent.class);
@@ -57,7 +57,7 @@ public class KafkaConfig {
         ConcurrentKafkaListenerContainerFactory<String, OrderEvent> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
 
-        // Use your consumer factory
+
         factory.setConsumerFactory(new DefaultKafkaConsumerFactory<>(
                 Map.of(
                         ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092",
@@ -67,7 +67,7 @@ public class KafkaConfig {
                 new JsonDeserializer<>(OrderEvent.class).trustedPackages("*")
         ));
 
-        // Enable manual acknowledgment
+
         factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
         return factory;
     }
